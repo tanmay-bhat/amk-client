@@ -11,8 +11,8 @@ RUN tar -xzf kafka_2.12-2.8.0.tgz
 #download AWS MSK IAM module in kafka-version/libs
 RUN wget -q https://github.com/aws/aws-msk-iam-auth/releases/download/v1.1.1/aws-msk-iam-auth-1.1.1-all.jar -P kafka_2.12-2.8.0/libs
 
-#cd into kafka_2.12-2.8.0/bin
-RUN cd kafka_2.12-2.8.0/bin
+#workdir kafka_2.12-2.8.0/bin
+WORKDIR /kafka_2.12-2.8.0/bin
 
 #set the entrypoint to a interactive shell
 ENTRYPOINT /bin/bash
